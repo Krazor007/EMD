@@ -1,0 +1,58 @@
+/*----------
+
+This file contains all classes overridden from bootstrap
+
+---------*/
+
+.container{
+	border:1px solid none !important;
+	height:100% !important;
+}
+
+a:hover{
+	text-decoration: none;
+	color:#ccc;
+}
+
+
+/*---------------------------Menu bar---------------------------*/
+
+.navbar-default{
+	background: inherit; !important;
+	border: none !important;
+	font-weight: 700;
+}
+
+nav{
+	box-shadow:none !important;
+	-webkit-box-shadow:none !important;
+    -moz-box-shadow:none !important;
+}
+
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	background: inherit !important;
+	color:#218C8D;       /*green1*/
+}
+
+/*---------------------------Menu bar---------------------------*/
+
+
+
+/*---------------------------Body---------------------------*/
+
+
+p{
+	text-align: justify;
+	font-size: 13px;
+	letter-spacing: 0.25px;
+	line-height: 20px;
+	color: #222;
+}
+
+.btn{
+	border-radius: 1px !important;
+	border:none !important;
+}
+
+/*---------------------------Body---------------------------*/

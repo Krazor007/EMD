@@ -1,0 +1,129 @@
+<div class="container">
+
+	<!-- title -->
+	<div class="page-title">
+		Contact Us
+	</div>
+	<div class="page-title-border">	</div>
+	<br/>
+	<div class="row">		
+		<!--conatct info-->		
+		<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-push-6 col-lg-push-6">
+			<div class="row contact-row animatein">
+				<div class="hidden-xs hidden-sm col-md-1 col-lg-1">&nbsp</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 contact-icon">
+					<span class="glyphicon glyphicon-user"></span>
+				</div>
+				<div class="col-xs-10 col-sm-10 col-md-9 col-lg-9 contact-text">
+					<span class="">Jitendra T.</span>
+				</div>
+			</div>	
+			<div class="row contact-row animatein">
+				<div class="hidden-xs hidden-sm col-md-1 col-lg-1">&nbsp</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 contact-icon">
+					<span class="glyphicon glyphicon-phone-alt"></span>
+				</div>
+				<div class="col-xs-10 col-sm-10 col-md-9 col-lg-9 contact-text">
+					<span class="">022-28528889</span>
+				</div>
+			</div>	
+			<div class="row contact-row animatein">
+				<div class="hidden-xs hidden-sm col-md-1 col-lg-1">&nbsp</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 contact-icon">
+					<span class="glyphicon glyphicon-earphone "></span>
+				</div>
+				<div class="col-xs-10 col-sm-10 col-md-9 col-lg-9 contact-text">
+					<span class="">(+91)9867916999</span>
+				</div>
+			</div>	
+			<div class="row contact-row-double animatein">
+				<div class="hidden-xs hidden-sm col-md-1 col-lg-1">&nbsp</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 contact-icon">
+					<span class="glyphicon glyphicon-envelope "></span>
+				</div>
+				<div class="col-xs-10 col-sm-10 col-md-9 col-lg-9 contact-text">
+					<span class="">allcurelifescience@yahoo.com<br/>
+           			corporate@allcurelifescience.com</span>
+				</div>
+			</div>
+			<div class="row contact-row-double animatein">
+				<div class="hidden-xs hidden-sm col-md-1 col-lg-1">&nbsp</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 contact-icon">
+					<span class="glyphicon glyphicon-map-marker "></span>
+				</div>
+				<div class="col-xs-10 col-sm-10 col-md-9 col-lg-9 contact-text">
+					<span class="">48,Vijay Building,Sakinaka,Andheri-Kurla Road,Mumbai-400072,Maharashtra,India</span>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<iframe src="https://www.google.com/maps/d/embed?mid=zLIvRpMP0NGU.kpArBl6Z0g1M" width="100%" height="300px"></iframe>
+				</div>
+			</div> -->					
+		</div>
+
+
+		<!--user form-->
+		<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-pull-6 col-lg-pull-6">
+			<div class="hidden-lg hidden-md col-xs-12 col-sm-12">	&nbsp <br/>	</div>
+			<p class="aniup"> We are here to answer any questions you may have about Allcure Lifescience. Reach out to us and we will respond as soon as we can.</p>
+			<br/>
+			<form class="form-horizontal" role="form" action="sendmil.php" name="contactform" method="post">
+			  	<div class="form-group aniup">
+			    	<label class="control-label col-sm-2 ">Name</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" id="name" placeholder="Type your name here">
+			    	</div>
+			  	</div>
+			  	<div class="form-group aniup">
+			    	<label class="control-label col-sm-2" for="email">Email</label>
+    				<div class="col-sm-10">
+      					<input type="email" class="form-control" id="email" placeholder="We will keep it safe. We Promise!">
+			    	</div>
+			  	</div>
+			  	<div class="form-group aniup"> 
+			    	<label class="control-label col-sm-2" >Company</label>
+			    	<div class="col-sm-10">
+			      		<input type="text" class="form-control" id="company" placeholder="Is this on behalf of any organisation?">
+			    	</div>
+			  	</div>
+			  	<div class="form-group aniup"> 
+			    	<label class="control-label col-sm-2" >Message</label>
+			    	<div class="col-sm-10">
+			      		<input type="textarea" class="form-control" id="message" placeholder="Type in your message/question here..">
+			    	</div>
+			  	</div>
+			  	<div class="form-group aniup"> 
+			    	<div class="col-sm-offset-2 col-sm-10">
+			      	<button type="submit" class="btn basic-button">Send Message</button>
+			    	</div>
+			  	</div>
+			</form>	
+		</div>
+	</div> <!--outer-row ends-->
+
+	<br/>
+</div> <!--container ends -->
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("#searchform").hide();
+	});
+
+
+	$(".aniup").each(function(i){
+		$(".aniup").hide();
+		setTimeout(function(){
+			$(".aniup").eq(i).addClass("animated fadeInUp").show()},200*i)
+	});
+
+	$(".animatein").each(function(i){
+		$(".animatein").hide();
+		setTimeout(function(){
+			$(".animatein").eq(i).addClass("animated slideInRight").show()},200*i)
+	});
+
+
+</script>

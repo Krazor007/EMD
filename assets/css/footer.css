@@ -1,0 +1,54 @@
+/*----------
+
+This file contains style for the footer
+
+This footer is displayed on all the pages
+
+---------*/
+
+.footer-outer{
+	width: 100%;
+	padding: 40px 0px 20px 0px;
+
+	background-color: #2A3744;    	/*gray1*/
+	color:#eee;						/*gray4*/
+}
+
+.center-block{
+	text-align: center;
+	font-size: 13px;
+}
+
+.ksquare{
+	font-family: 'Segoe UI Light','Arial','Sans-serif';
+	font-size: 11px;
+	color: #ccc;
+	letter-spacing: 0.5px;
+	text-align: center;
+	margin-top: 7px;
+}
+
+.ksq{
+	color: #FF802C;
+	font-family: 'Tangerine', cursive;
+	font-size: 20px;
+}
+
+.publicity-block{
+	font-size: 30px;
+}
+
+.media-icons{
+	float: left;
+ 	margin-left: 10px;
+ }
+
+.icon-hov:hover{
+	cursor: pointer;
+	-webkit-transition: 0.3s ease all; /* Safari 3.1 to 6.0 */
+    transition:  0.3s ease all;
+}
+.icon-hov.facebook:hover	{	color:#3b5998;	}
+.icon-hov.twitter:hover		{	color:#1dcaff;	}
+.icon-hov.linkedin:hover	{	color:#0077b5;	}
+.icon-hov.googleplus:hover	{	color:#dd4b39;	}

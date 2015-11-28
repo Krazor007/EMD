@@ -1,0 +1,209 @@
+<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12"><p style="float:left;padding-right:1%">Actions:</p>
+<div class="btn-group" role="group" aria-label="..." style="padding-bottom:3%">
+  <button id="add_item" type="button" class="btn btn-default" ng-click="delete()">Delete items &nbsp;<span class="badge">{{delcount}}</span></button>
+  <button id="ab_sort" title="sortby name" type="button" class="btn btn-default" ng-click="setSort_ab()">Name &nbsp;<span ng-class="ordr_ab ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+  <button id="cr_sort" title="sortby date created" type="button" class="btn btn-default" ng-click="setSort_cr()">Created date &nbsp;<span ng-class="ordr_cr ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+  <button id="ud_sort" title="sortby date updated" type="button" class="btn btn-default" ng-click="setSort_ud()">Updated date &nbsp;<span ng-class="ordr_ud ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+       
+</div>
+  <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 button dropdown" style="padding-bottom:3%">
+          <select class="form-control" id="status" name="status" ng-model="filtercontent" ng-change="changed()">
+          <option value="">All</option>
+          <option value="{{filter.type}}" ng-repeat="filter in typefilter">{{filter.type}}</option> 
+          </select>
+  </div> 
+</div>
+<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6" style="position:relative;float:left;padding-bottom:15px" ng-repeat="product in products | filter: searchKeyword | filter: filtercontent |orderBy:parameter:ordr">
+  <div class="media prod_module hvr-glow" style="padding:1%" ng-click="toggleSelect($event,product)" ng-class="product.selected ? 'selected' : 'na'">
+  <div class="media-left hidden-xs">
+      <img class="media-object" src="{{imgabsolute+product.pimgpath}}" alt="...">
+  </div>
+  <div class="hidden-md hidden-sm hidden-lg" style="width:25px;height:175px;border-left:solid #2A3744 4px;float:left;">
+    
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{product.pname}}</h4>
+     <div class="row">
+     <div class="col-md-4 col-sm-2 col-xs-3 col-lg-3">
+     <p><b>Strength:</b></p>
+     </div>
+     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+     <p style="text-align:left">{{product.pstrength}}</p>
+     </div>
+     </div>
+     <div class="row">
+     <div class="col-md-4 col-sm-2 col-xs-3 col-lg-3">
+     <p><b>Type:</b></p>
+     </div>
+     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+     <p style="text-align:left">{{product.type}}</p>
+     </div>
+     </div>
+      <div class="row">
+      <div class="col-md-12">
+      <p><b>Packingsize:</b></p>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-12">
+      <p style="text-align:left">{{product.ppacksize}}</p>
+      </div>
+      </div>
+     <div class="row">
+     <div class="col-md-4 col-sm-2 col-xs-3 col-lg-3">
+     <p><b>Visibility:</b></p>
+     </div>
+     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+     <p style="text-align:left">{{product.status}}</p>
+     </div>
+     </div>
+  </div>
+</div>
+    <div id="setModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Add product</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" name="addform" method="post" action="createItem.php" data-toggle="validator">
+    <div class="form-group">
+        <label class="control-label col-md-4" for="first_name">Name:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Product name" required />
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Type:</label>
+        <div class="col-md-6">
+          <select class="form-control" id="type" name="type">
+          <option value="{{ptype.type}}" ng-repeat="ptype in ptypes">{{ptype.type}}</option>
+          </select>
+        </div>
+        </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Strength:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="strength" name="strength" placeholder="Strength(mg)"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Package size:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="packsize" name="packsize" placeholder="Packing size"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Image name:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="imgname" name="imgname" placeholder="Image name with extension"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Status:</label>
+        <div class="col-md-6">
+          <select class="form-control" id="status" name="status">
+          <option value="show">Show</option>
+          <option value="hide">Hide</option> 
+          </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6">
+            <button type="submit" value="Submit" class="btn btn-custom pull-right">Add</button>
+        </div>
+    </div>
+</form>
+        </div><!-- End of Modal body -->
+        </div><!-- End of Modal content -->
+        </div><!-- End of Modal dialog -->
+    </div><!-- End of Modal -->
+    <div id="getModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Edit product</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" name="editform" method="post" action="updateItem.php" data-toggle="validator">
+    <div class="form-group">
+        <label class="control-label col-md-4" for="first_name">Name:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="pname" name="pname" placeholder="Product name" required ng-model="pr_name"/>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Type:</label>
+        <div class="col-md-6">
+          <select class="form-control" id="ptype" name="ptype">
+          <option value="{{ptype.type}}" ng-selected="pr_ptype == ptype.type" ng-repeat="ptype in ptypes">{{ptype.type}}</option>
+          </select>
+        </div>
+        </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Strength:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="pstrength" name="pstrength" placeholder="Strength(mg)" ng-model="pr_strength"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Package size:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="ppacksize" name="ppacksize" placeholder="Packing size" ng-model="pr_packsize"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name">Image name:</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="pimgname" name="pimgname" placeholder="Image name with extension" ng-model="pr_imgname"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4" for="last_name" ng-model="pstatus">Status:</label>
+        <div class="col-md-6">
+          <select class="form-control" id="pstatus" name="pstatus">
+          <option value="{{stat.status}}" ng-selected="stat.status == pr_status" ng-repeat="stat in stat_array">{{stat.status}}</option> 
+          </select>
+        </div>
+    </div>
+    <input type="text" class="form-control" id="pid" name="pid" ng-model="pr_id" style="display:none" />
+    <div class="form-group">
+        <div class="col-md-6">
+            <button type="submit" value="Submit" class="btn btn-custom pull-right">Done</button>
+        </div>
+    </div>
+</form>
+        </div><!-- End of Modal body -->
+        </div><!-- End of Modal content -->
+        </div><!-- End of Modal dialog -->
+    </div><!-- End of Modal -->
+
+</div>
+<script>
+$("#cr_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#ud_sort").css({'background-color':'#FFF'});
+  $("#ab_sort").css({'background-color':'#FFF'});
+});
+
+$("#ud_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#cr_sort").css({'background-color':'#FFF'});
+  $("#ab_sort").css({'background-color':'#FFF'});
+});
+
+$("#ab_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#cr_sort").css({'background-color':'#FFF'});
+  $("#ud_sort").css({'background-color':'#FFF'});
+});
+
+   $('#getModal').on('show', function (e) {
+        alert("hi");
+       $("#name").val($scope.pr_name);
+    });
+
+</script>
+

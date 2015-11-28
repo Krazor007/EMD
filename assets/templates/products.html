@@ -1,0 +1,98 @@
+<!-- <div class="row"><div class="col-md-12 col-sm-12 col-xs-12 col-lg-12"><h3>Products we offer :</h3></div></div> -->
+<div class="page-title">Products we offer</div>
+<div class="page-title-border"></div><br/><br/>
+
+<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12"><p style="float:left;padding-right:1%">Sort by:</p>
+<div class="btn-group" role="group" aria-label="..." style="padding-bottom:3%">
+  <button id="ab_sort" type="button" class="btn btn-default" ng-click="setSort_ab()">Name &nbsp;<span ng-class="ordr_ab ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+  <button id="cr_sort" type="button" class="btn btn-default" ng-click="setSort_cr()">Created date &nbsp;<span ng-class="ordr_cr ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+  <button id="ud_sort" type="button" class="btn btn-default" ng-click="setSort_ud()">Updated date &nbsp;<span ng-class="ordr_ud ? 'glyphicon glyphicon-triangle-bottom' : 'glyphicon glyphicon-triangle-top'"></span></button>
+</div>
+  <div class="col-md-3 col-sm-4 col-xs-12 col-lg-2 button dropdown" style="padding-bottom:3%">
+          <select class="form-control" id="status" name="status" ng-model="filtercontent" ng-change="changed()">
+          <option value="">All</option>
+          <option value="{{filter.type}}" ng-repeat="filter in typefilter">{{filter.type}}</option> 
+          </select>
+  </div> 
+</div>
+<div class="loadingdiv col-md-12 col-sm-12 col-xs-12 col-lg-12 hvr-bounce-to-right" style="text-align:center;"><h4 style="text-align:center;">Loading products .....</h4></div>
+<div class="col-md-6 col-sm-12 col-xs-12 col-lg-6 prod_wrapper" style="position:relative;float:left;padding-bottom:15px;" ng-repeat="product in products | filter: keyword | filter: filtercontent |orderBy:parameter:ordr">
+<li ng-show="!products.length">No Products</li>
+  <div class="media prod_module hvr-glow" style="padding:1%">
+  <div class="media-left hidden-xs">
+      <img class="media-object" src="{{imgabsolute+product.pimgpath}}" alt="...">
+  </div>
+  <div class="hidden-md hidden-sm hidden-lg" style="width:25px;height:175px;border-left:solid #2A3744 4px;float:left;">
+  	
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{product.pname}}</h4>
+    <div class="row">
+     <div class="col-md-4 col-sm-2 col-xs-3 col-lg-3">
+     <p><b>Type:</b></p>
+     </div>
+     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+     <p style="text-align:left">{{product.type}}</p>
+     </div>
+     </div>
+     <div class="row">
+     <div class="col-md-4 col-sm-2 col-xs-3 col-lg-3">
+     <p><b>Strength:</b></p>
+     </div>
+     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4">
+     <p style="text-align:left">{{product.pstrength}}</p>
+     </div>
+     </div>
+      <div class="row">
+      <div class="col-md-12">
+      <p><b>Packingsize:</b></p>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-12">
+      <p style="text-align:left">{{product.ppacksize}}</p>
+      </div>
+      </div>
+  </div>
+</div>
+</div>
+<script>
+	$(document).ready(function(){
+		$("#searchform").show();
+    $(".loadingdiv").show();
+$("#cr_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#ud_sort").css({'background-color':'#FFF'});
+  $("#ab_sort").css({'background-color':'#FFF'});
+});
+
+$("#ud_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#cr_sort").css({'background-color':'#FFF'});
+  $("#ab_sort").css({'background-color':'#FFF'});
+});
+
+$("#ab_sort").click(function(){
+  $(this).css({'background-color':'#2098D1'});
+  $("#cr_sort").css({'background-color':'#FFF'});
+  $("#ud_sort").css({'background-color':'#FFF'});
+});
+
+setTimeout(function(){
+
+/* $(".prod_module").each(function(i){
+   setTimeout(function(){
+    $(".prod_module").eq(i).fadeIn(200*i);
+   },90*i);
+
+ });*/
+
+$(".loadingdiv").fadeOut(300);
+
+},700);
+
+
+	});
+
+
+</script>

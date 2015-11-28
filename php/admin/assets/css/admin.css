@@ -1,0 +1,134 @@
+.padding-top-20
+{
+	padding-top: 20px;
+}
+
+.text-align-center
+{
+	text-align: center !important;
+}
+
+.font-raleway
+{
+	font-family:'raleway' !important;
+}
+
+h1,h2,h3,h4,p
+{
+	font-family:'raleway' !important;
+	color:black;
+}
+
+.prod_module
+{
+	background-color: #DDDDDD;
+}
+
+.prod_module:hover
+{
+	cursor: pointer;
+}
+
+.back-color
+{
+	background-color: #203040;
+}
+.edit_module
+{
+	width: 100px;
+	height: 115px;
+	position: relative;
+	left:22%;
+
+}
+
+.edit_module:hover
+{
+	cursor: pointer;
+}
+.edit_module_img
+{
+	width: 100px;
+	height: 100px;
+	background-image: url("../img/edit.png");
+	background-size: 100% 100%;	
+}
+
+.delete_module_img
+{
+  width: 100px;
+  height: 100px;
+  background-image: url("../img/delete.png");
+  background-size: 100% 100%; 
+}
+
+.edit_wrapper
+{
+   padding-bottom: 9%;
+}
+
+.back-color-body
+{
+	background-color:#EAF2BB;
+}
+
+.selected
+{
+  background-color: #B22222;
+}
+
+.vert-line
+{
+    width: 25px !important;
+    height: 175px !important;
+    border-left: solid red 2px !important;
+    float: left !important;
+}
+
+@media only screen and (max-width: 1060px) {
+   .container-fluid
+   {
+   	padding-top: 9%;
+   }
+    
+}
+
+@media only screen and (min-width: 1060px) {
+   .container-fluid
+   {
+   	padding-top: 7%;
+   }
+    
+}
+
+@media only screen and (max-width: 850px) {
+   .container-fluid
+   {
+   	padding-top: 10%;
+   }
+    
+}
+
+@media only screen and (max-width: 750px) {
+   .container-fluid
+   {
+   	padding-top: 15%;
+   }
+    
+}
+
+@media only screen and (max-width: 590px) {
+   .container-fluid
+   {
+   	padding-top: 20%;
+   }
+    
+}
+
+@media only screen and (max-width: 450px) {
+   .container-fluid
+   {
+   	padding-top: 25%;
+   }
+    
+}

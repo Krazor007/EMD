@@ -1,0 +1,60 @@
+/*----------
+
+This file contains style for the body
+
+This body is displayed on all the pages
+
+---------*/
+
+.body-outer{
+	width: 100%;
+	min-height:400px;
+	background-color: #eee;    	
+	color:#5f6972;						/*gray3*/
+}
+
+.body-container{	
+	padding: 25px 0;
+}
+
+
+.page-title{
+	text-align: center;
+	font-size:	18px;
+	font-weight: 700;
+	padding: 5px;
+}
+
+.page-title-border{
+	margin-left: auto;
+	margin-right: auto;	
+	height: 2px;
+	width:70px;
+	border-radius: 2px;
+	content: '';
+	background-color: #1a6f70;
+}
+.page-title-border.left{
+	margin: 0;
+}
+
+.sub-title{
+	background-color: #1a6f70;
+	font-size: 15px;
+	text-align: left;
+
+}
+
+.first-of-p{
+	font-size: 18px;
+	color: #1a6f70;
+}
+
+.basic-button{
+	background-color:#176364;
+	color:#dcdcdc;
+}
+.basic-button:hover{
+	background-color:#218C8D;
+	transition:0.35s ease all;
+}

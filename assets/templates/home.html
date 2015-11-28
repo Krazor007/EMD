@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="marquee-text">
+		<marquee>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</marquee>
+	</div>
+
+	<div class="row dashboard">
+		<div class="col-md-6 col-lg-6 ">
+			<div class="row">
+				<div class="col-md-12 col-lg-12 single-div ani">
+				.
+				</div>
+				<div class="col-md-12 col-lg-12">
+					<div class="row">
+						<div class="col-md-4 col-lg-4 single-div ani">.</div>
+						<div class="col-md-4 col-lg-4 single-div ani">.</div>
+						<div class="col-md-4 col-lg-4 single-div ani">.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-lg-6 double-div animated noani">
+			.
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$(".ani").hide()
+	$(".ani").each(function(i){
+		setTimeout(function(){
+			$(".ani").eq(i).addClass("animated slideInLeft").show()},200*i)
+	});
+});
+
+</script>

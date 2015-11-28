@@ -1,0 +1,17 @@
+.marquee-text{
+  color:#333;
+}
+
+.dashboard{
+  margin-top: 15px;
+}
+
+.double-div{
+  height:300px;
+  border:1px solid grey;
+}
+
+.single-div{
+height: 150px;
+  border:1px solid green;
+}

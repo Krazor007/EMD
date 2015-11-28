@@ -1,0 +1,85 @@
+<div class="container aboutus-container">
+
+	<!-- title -->
+	<div class="page-title">
+		About Us
+	</div>
+	<div class="page-title-border">	</div>
+	<br/>
+	
+	<div class="row">		
+		<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-push-6 col-lg-push-6 ">
+			<!-- Nav tabs -->
+			<div class="row tab-head-container">
+				<div class="col-sm-offset-2 col-sm-8 col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 tab-head active hvr-shadow-radial animatein" name="Established">
+		              <i class="fa fa-check"></i> &nbsp Established
+				</div>
+				<div class="col-sm-offset-2 col-sm-8 col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 tab-head hvr-shadow-radial animatein" name="Headquarters">
+		          	  <i class="fa fa-university"></i> &nbsp Headquarters
+				</div>
+				<div class="col-sm-offset-2 col-sm-8 col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 tab-head hvr-shadow-radial animatein" name="Market">
+		              <i class="fa fa-users"></i> &nbsp Our Market
+				</div>
+				<div class="col-sm-offset-2 col-sm-8 col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 tab-head hvr-shadow-radial animatein" name="Plans">
+		              <i class="fa fa-cog"></i> &nbsp Future Plans
+				</div>	
+		    </div>	       	   
+		</div>
+		<div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-pull-6 col-lg-pull-6">
+			 <!-- Tab panes -->
+		    <div class="row tab-pane-conatiner">
+		      <div class="tab-pane col-sm-12 col-xs-12 col-md-12 col-lg-12" name="Established">
+		      	<div class="tab-pane-header animated fadeInDown">Established</div> 
+		          <p class=" animated fadeInUp">
+		          	<span class="first-of-p">E</span>stablished in 2012, Allcure is born out of the vision to address the healthcare needs with an integrity in pharmaceutical industry. Our commitment and drive have propelled our growth by manufacturing and Exporting a range of API, formulations,Cosmetics and biotechnology.We begin with an Exports Bussines and aspire soon to mark our presence as one of the to.Indian pharmaceutical corporates in the domestic industry.
+		          </p>
+		      </div>
+		      <div class="tab-pane col-sm-12 col-xs-12 col-md-12 col-lg-12" name="Headquarters">
+		      	<div class="tab-pane-header animated fadeInDown">Headquarters</div>
+		          <p class=" animated fadeInUp">
+		          	<span class="first-of-p">H</span>eadquartered in Mumbai, India, Allcure is today an integrated pharmaceutical company with infrastructure, skills and resources that are at par with the best in the world.Our strengths are in manufacturing of APIs, Formulations,cosmetics and Biotechnology.The Company has carved a niche for itself as a preferred outsourcing partner for some of the well established MNCs both in India and global markets. 
+		          </p>
+		      </div>
+		      <div class="tab-pane col-sm-12 col-xs-12 col-md-12 col-lg-12" name="Market">
+		      	<div class="tab-pane-header  animated fadeInDown">Market</div>
+		         <p class=" animated fadeInUp">
+		          	<span class="first-of-p">A</span>llcure manufactures and markets formulations under its own brands in the international market and exports its own formulations to Asia, Africa, CIS, Europe, Latin America and the Middle East and soon we plan to have our presence and establish in Domestic Market.We plan to manufacture solid oral formulations for the international regulated markets. We also aspire for  accreditation from US FDA, UK MHRA, WHO Geneva and MCC South Africa.The Allcure brand stands for quality, competitiveness and transparency. These values have stood us in good stead to carve our image in the industry and build long-term sustainable relationships with our partners. CIS.
+		          </p>
+		      </div>
+		      <div class="tab-pane col-sm-12 col-xs-12 col-md-12 col-lg-12" name="Plans">
+		      	<div class="tab-pane-header animated fadeInDown">Plans</div>
+		          <p class=" animated fadeInUp">
+		          	<span class="first-of-p">A</span>llcure is also very active in dealing with HIV/AIDS concern through its "Let's fight AIDS together" initiative and we plan soon to supply Antiretroviral drugs to Africa, Asia Pacific and CIS.A significant step towards fulfilling our corporate social responsibility.
+		          </p>
+		      </div>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+	$(".animatein").each(function(i){
+		$(".animatein").hide();
+		setTimeout(function(){
+			$(".animatein").eq(i).addClass("animated slideInRight").show()},200*i)
+	});
+
+
+	$(".tab-pane").hide();
+	$(".tab-pane").eq(0).addClass("activated animated fadeIn").show();
+	$(".tab-head").click(function($this){
+        $(".tab-pane").removeClass("activated animated fadeIn").hide();
+        $(".tab-head").removeClass("active");
+        $(".tab-head").eq($(this).index()).addClass("active");
+        $(".tab-pane").eq($(this).index()).addClass("activated animated fadeIn").show();
+	});
+
+
+	$("#searchform").hide();
+
+
+});
+
+</script>
